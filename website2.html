@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang=en-US>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+  <title> How To Make a Website </title>
+  <link rel='icon' type="image/x-icon" href='https://i.kym-cdn.com/photos/images/newsfeed/002/322/154/667.jpg'>
+  <!-- <link rel="stylesheet" href="website2.css"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function openTab(event, id) {
+      var i, articles, links;
+      articles = document.getElementsByClassName("article");
+      for (i = 0; i < articles.length; i++)
+        articles[i].style.display = "none"
+
+      links = document.getElementsByClassName("link");
+      for (i = 0; i < links.length; i++)
+        links[i].className = links[i].className.replace(" active", "");
+
+      var article = document.getElementById(id);
+      article.style.display = "block";
+
+      var bar = document.getElementById('prog');
+      var tmp = parseInt(id)
+      tmp = (tmp/articles.length) * 100;
+      bar.style.width = tmp.toString() + "%";
+      event.currentTarget.className += " active";
+    }
+  </script>
+  <div class="alert alert-info alert-dismissible my-5 fade show">
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  Enable <strong>Cookies</strong>?
+  </div>
+</head>
+
+<body>
+<div class='container-fluid'>
+  <header class='container-fluid p-5 my-3 bg-dark'>
+    <h1 class='text-light'> How To Make a Website </h1>
+  </header>
+  <ul class="nav nav-pills sticky-top bg-light">
+    <li class="nav-item">
+      <a class="nav-link text-dark" data-bs-toggle='pill' href="#intro">Introduction</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-dark" data-bs-toggle='pill' href="#tutor">Tutorial</a>
+    </li>
+  </ul>
+  <br>
+  <div class='tab-content'>
+    <div class='container-fluid tab-pane active' id='intro'>
+      <h3> Introduction </h3>
+      <p>
+        So, you want to make your own website, huh? This will not be an easy journey, and you WILL most definitely suffer a lot.
+        In the end, while you may have created the perfect website, both your eyes and fingers will absolutely remember the excruciating pain you put them under,
+        and the trauma of misaligned textboxes will stay at the back of your mind for quite a while. You have been warned &#128522;. <br><br>
+        When you first start learning and building a website, you will experience five different stages of emotions. At least, that is what happened to me, so in a way,
+        this whole website is a documentation of my own learning process. However, that would make my website some lame blog. So, I decided to share my experience a different way --- in the form of a tutorial.
+        <br><br><br> <i> NOTE: I am <b>NOT</b> a professional website designer or anything remotely close to that, so while there are actual tips inside this website, please do not
+        take anything too seriously. </i>
+      </p>
+    </div>
+    <div class='container-fluid tab-pane fade' id='tutor'>
+      <div class='row'>
+        <div class="progress my-3 mx-1">
+          <div class="progress-bar bg-dark" id='prog' style="width:0%"></div>
+        </div>
+      </div>
+      <div class='row'>
+        <div class='col-12 col-sm-4 col-md-2'>
+          <nav class='container-fluid my-3' id='nav'>
+            <div class='btn-group-vertical'>
+              <button type="button" class="link btn btn-outline-dark" onclick="openTab(event, '1')"> Intrigue </button>
+              <button type="button" class="link btn btn-outline-dark" onclick="openTab(event, '2')"> Curiosity </button>
+              <button type="button" class="link btn btn-outline-dark" onclick="openTab(event, '3')"> Frustration </button>
+              <button type="button" class="link btn btn-outline-dark" onclick="openTab(event, '4')"> Indecision </button>
+              <button type="button" class="link btn btn-outline-dark" onclick="openTab(event, '5')"> Semi-Satisfaction </button>
+            </div>
+          </nav>
+        </div>
+        <div class='col-12 col-sm-8 col-md-10'>
+          <div class="container-fluid my-3">
+            <div class="article" id='1'>
+              <h2 > Learn HTML </h2>
+              <p>
+                At first, of course you'll be intrigued at the idea of building your own website, and you'll definitely have a lot of questions about how to do so.
+                The first step of creating a website is learning <i>how</i> to make one (obviously). Almost all websites are written in a language called <abbr title="Hypertext Markup Language"> HTML </abbr>. HTML is not a way to format and
+                decorate your website but a way to organize its foundational logic.
+                There are countless websites out there that have tutorials on the HTML. The one I recommend (which, not coincidentally, is also the one I used) is <a href="https://www.w3schools.com/html/default.asp"> W3Schools </a>.
+                It has an article dedicated to basically every aspect of HTML. Even as I'm writing this very paragraph, I'm constantly referring back the website.
+                HTML organizes websites with <i>tags</i>, and everything should go in a tag. The way you would write this is <br><br>
+                <code>&lt;tag&gt; content &lt;/tag&gt;.</code><br><br> As a summary, here are the most important tags to know:
+                <hr>
+                <table>
+                  <tr>
+                    <th> Tag </th>
+                    <th> Use </th>
+                  </tr>
+                  <tr>
+                    <td> !DOCTYPE html </td>
+                    <td> Declares a file to be an html document, goes at the top of every html file </td>
+                  </tr>
+                  <tr>
+                    <td> html </td>
+                    <td> Creates the root element of the webpage, should be the second line </td>
+                  </tr>
+                  <tr>
+                    <td> body </td>
+                    <td> Contains all the contents of your html file, everything should go in body (or the head tag) </td>
+                  </tr>
+                  <tr>
+                    <td> div </td>
+                    <td> Block level divider </td>
+                  </tr>
+                  <tr>
+                    <td> p </td>
+                    <td> Represents a paragraph </td>
+                  </tr>
+                  <tr>
+                    <td> h1 </td>
+                    <td> Creates a heading. There are 6 different headings of varying sizes </td>
+                  </tr>
+                  <tr>
+                    <td> img </td>
+                    <td> Creates an image given a reference link </td>
+                  </tr>
+                  <tr>
+                    <td> a </td>
+                    <td> Creates a link given an address </td>
+                  </tr>
+                </table>
+                <hr>
+              Of course, there are a lot, and I mean <b>a lot</b>, of other tags, but with these 6, you can probably create a coherent website at least.
+              </p>
+            </div>
+            <div class="article" id='2'>
+                <h2> Play Around </h2>
+                <p>
+                  Now, after some learning and experimentation, you probably have a rough idea of what most tags mean and how they work. <i>However</i>, your website probably
+                  looks something like this:
+                  <hr>
+                  <iframe src="example.html" width=100%></iframe>
+                  <hr>
+                  And something like that, is absolutely terrible. Where are all the colors, the fonts, the style?
+                  <b>Style</b> is a tag attribute that adds styles to an element in HTML. With style, you can change colors, fonts, sizes, backgrounds, and way more.
+                  The syntax of using style is <br><br>
+                  <code> &lt;tag style="property1: value1 property2: value2..."&gt; content &lt;tag&gt;. </code> <br><br>
+                  The style options that are most commonly used include:
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"> color </li>
+                    <li class="list-group-item"> background-color </li>
+                    <li class="list-group-item"> font-family </li>
+                    <li class="list-group-item"> font-size </li>
+                    <li class="list-group-item"> text-align </li>
+                    <li class="list-group-item"> border </li>
+                    <li class="list-group-item"> height </li>
+                    <li class="list-group-item"> width </li>
+                  </ul>
+                  With these style properties, you can make your website 100 times better than the hot garbage it was before! Note that there are also other attributes like
+                  href (attaches a link to text), src (provides the source of an image), class, id, etc, but <del>I'm getting lazy</del> that's for you to discover and learn on your own.
+                </p>
+            </div>
+            <div class="article" id='3'>
+                <h2> Format Your Website </h2>
+                <p>
+                  Now that you're familiar with everything, it's time to actually start building your website. First, you'd want to construct a clear structure and flow of logic.
+                  And perhaps, if you're like me, a perfectionist and borderline mentally stable, you'd realize that lining up your textboxes is the next hardest thing to waking up in the morning.
+                  If you haven't noticed already, the white bar to the left of this article is actually way thicker than the bar on the top, and at this point, I've lost all will to fix that problem ---
+                  misalignment is just something you'll just have to live with for now. However, there are some ways you can make this calamity a little more livable, and that is using the style options: padding and border.
+                  <br><br>
+                  In short, these options allow you to change the gap between the textboxes, but from my experience, it is extremely gimmicky. There are many units you can use to determine the amount of padding
+                  and the width of your borders. The ones that I am familiar with include:
+                  <hr>
+                  <table>
+                    <tr>
+                      <th> Unit </th>
+                      <th> Definition </th>
+                    </tr>
+                    <tr>
+                      <td> vh </td>
+                      <td> Represents 1% of the viewing port's height </td>
+                    <tr>
+                      <td> vw </td>
+                      <td> Represents 1% of the viewing port's width </td>
+                    </tr>
+                    <tr>
+                      <td> px </td>
+                      <td> Represents 1 pixel </td>
+                    </tr>
+                    <tr>
+                      <td> % </td>
+                      <td> Represents 1% of the parent element </td>
+                    </tr>
+                  </table>
+                  <hr>
+                  In my opinion, you should never use pixel as the format will definitely mess up for different devices. % is also kind of gimmicky, so try to stick with vh and vw.
+                  Remember these units if you don't want to create this abomination: <hr>
+                  <img alt="bad borders" src="https://i.stack.imgur.com/51Ner.png" width=100%>
+                </p>
+            </div>
+            <div class="article" id='4'>
+                <h2> Run Into a Block </h2>
+                <p>
+                  Great, now you have a format for your website, but what are you actually going to write about? What will be your website's theme?
+                  Compared to aligning textboxes, this is 10 times worse! Not only do you not have any creativity, you also probably have nonexistent work ethic. Or maybe it's just me.
+                  ...Anyway, your workflow will probably look like something like:
+                  <ol>
+                    <li> Think of a new theme </li>
+                    <li> Doubt your theme </li>
+                    <li> Scrap your new theme </li>
+                    <li> Close the program and procrastinate </li>
+                    <li> Repeat 1-4 </li>
+                  </ol>
+                  How do you prevent this from happening, you ask? Well, I have no idea! Some things that helped me, however, were looking at
+                  <a href="https://www.youtube.com/watch?v=JikG6i7TTSc&ab_channel=Jojo%27sASMR">website templates</a> online and asking other people what
+                  they were working on. Obviously, I'm not encouraging you to copy them, but it is helpful to seek inspiration. Also, don't second guess
+                  yourself too much; start working on an idea once it comes up, and scrap it later on if you decide that you don't like it. <br><br>
+                  Guess what happens on you finalized a theme for your website? Another block! While you do have everything organized and set up, you didn't plan
+                  what you are going to say specifically, so now you'll just have to wing it. And because you'll be working at a rate of 5 minutes per sentence, you'll end
+                  up like me, running away from my other responsibilities to be stuck doing this at 2 a.m. Something similar to the last tip that might help is to try to write
+                  everything in one go and as fast as possible, and then revisit the content later on and revise. No, this isn't English class, but this definitely helped me improve
+                  my efficiency (even so, I wasn't very efficient).
+                </p>
+            </div>
+            <div class='article' id='5'>
+              <h2> Create Your Website </h2>
+              <p>
+                Congratulations! You've finished building your website. This is the point where you start to question if all the effort was worth it. Maybe you could've gone with a simpler idea or theme,
+                but I guess you wanted to do this to yourself. Your brain is too dead to care whether it's good or not anymore, and all you can think about is sleep.
+                You know, in fact, I am going to bed right now. Whether I leave this part in or not is unclear, but if you're somehow reading this, then that means I have either
+                <ol>
+                  <li> Forgot about this text </li>
+                  <li> Became too lazy to remove it </li>
+                  <li> Left it in intentionally for comedic effect </li>
+                </ol>
+              It's probably going to be a combination of 2 and 3. That's it, I'm really tired now. I hope you liked my website, goodnight.
+              <br><br><a href='#head'> Go Back To Top </a>
+              </p>
+              <img alt="Winnie the Pooh does Gangnam Style (idk man)" width=100% src="https://thumbs.gfycat.com/AjarTautAssassinbug-size_restricted.gif">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

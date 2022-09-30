@@ -29,10 +29,6 @@
       event.currentTarget.className += " active";
     }
   </script>
-  <div class="alert alert-info alert-dismissible my-5 fade show">
-  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-  Enable <strong>Cookies</strong>?
-  </div>
 </head>
 
 <body>
@@ -42,14 +38,14 @@
   </header>
   <ul class="nav nav-tabs sticky-top p-2 navButton">
     <li class="nav-item">
-      <a class="nav-link" data-bs-toggle='tab' href="#intro">Introduction</a>
+      <a class="nav-link active" data-bs-toggle='tab' href="#intro">Introduction</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" data-bs-toggle='tab' href="#tutor">Tutorial</a>
     </li>
   </ul>
   <br>
-  <div class='tab-content'>
+  <div class='tab-content mb-5 p-3'>
     <div class='container-fluid tab-pane active' id='intro'>
       <h3> Introduction </h3>
       <p>
@@ -65,7 +61,7 @@
     <div class='container-fluid tab-pane fade' id='tutor'>
       <div class='row'>
         <div class="progress my-3 mx-1">
-          <div class="progress-bar bg-dark" id='prog' style="width:0%"></div>
+          <div class="progress-bar bg-dark" role='progressbar'id='prog' style="width:0%"></div>
         </div>
       </div>
       <div class='row'>
@@ -245,7 +241,9 @@
       </div>
     </div>
   </div>
-
+  <hr>
+  <div class='container-fluid p-5 mt-5 bg-dark'>
+  </div>
 </div>
 </body>
 </html>
